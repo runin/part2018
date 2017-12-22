@@ -1,0 +1,139 @@
+body{
+	width: 100%;
+	background: #070604 url(../images/answerBg.jpg) no-repeat;
+	background-size: 100% 100%;
+}
+
+body[data-type="answer"] .main{
+	.logo{
+		width: 201px;
+		display: inline-block;
+		position: absolute;
+		top: 13px;
+		left: 20px;
+	}
+	.countdown{
+		color: #F0DD9F;
+		font-size: 16px;
+		font-style: normal;
+		text-align: right;
+		margin: 35px 20px;
+			.countdown-tip, .detail-countdown, .detail-countdown label, .detail-countdown i{
+				color:#F0DD9F;
+				font-size: 16px;
+				font-style: normal;
+			}
+	}
+	.question {
+		margin: 65px 15px;
+		ul{
+			h3, span{
+				color: #CAB674;
+				font-size: 24px;
+				}
+				h3{
+					margin: 66px auto 25px;
+				}
+				span{
+			        display: -webkit-box;
+				    background: #67573B;
+				    border-radius: 64px;
+				    padding: 12px 22px;
+				    font-size: 25px;
+				    &.active{
+				    	background: #F0B148;
+				    	color: #FFF;
+				    }
+				}
+				div{
+					font-size:0px;
+					-webkit-box-pack: justify;
+				    -moz-box-pack: justify;
+				    -ms-box-pack: justify;
+				}
+			li{
+				&:nth-child(2){
+				div{
+					text-align: center;
+					span{
+					    display: inline-table;
+					    margin-bottom: 15px;
+					    &:nth-child(2), &:nth-child(4){
+					    	width: 335px;
+					    	text-align: center;
+				    	    margin-left: 35px;
+					    }
+					}
+				}
+			}
+			}
+		}
+		
+	}
+	.submit{
+		width: 188px;
+		margin: 60px auto;
+	}
+
+}
+
+.lottery-dialog{
+	&:after {
+	    content:'';
+	    position:fixed;
+	    top:0;
+	    left:0;
+	    width:100%;
+	    height:100%;
+	    background:rgba(0,0,0,.75);
+	    z-index:99;
+	}
+	.gay{
+		position: absolute;
+		z-index: 100;
+	}
+	.countdown{
+        position: absolute;
+	    top: 50vh;
+	    z-index: 101;
+	    color: #FFF;
+	    text-align: center;
+	    z-index: 101;
+	    display: inline-block;
+	    width: 100%;
+	    .countdown-tip{
+		    color: #FFD05E;
+		    font-size: 28px;
+		    font-weight: bold;
+		    margin-bottom: 50px;
+		    display: block;
+		}
+	    .detail-countdown{
+			display: block;
+		    margin: 0 auto;
+		    label i{
+				font-size: 44px;
+			    display: inline-block;
+			    width: 65px;
+			    height: 80px;
+			    line-height: 80px;
+			    background: url(../images/ansBg.png) no-repeat;
+			    background-size: 100% 100%;
+			    margin: 11px 10px 0 0;
+			    color: #91621A;
+			    box-shadow: 2px 1px 4px rgb(226, 211, 217);
+			    font-style: normal;
+			    font-weight: bold;
+			    border-radius: 5px;
+			    padding: 0 5px;
+			}
+			span img{
+				width: 36px;
+			    display: inline-block;
+			    vertical-align: bottom;
+			}
+
+		}
+	} 
+	
+}

@@ -1,0 +1,115 @@
+body{
+  width: 100%;
+  background: #070604 url(../images/indexBg.jpg) no-repeat;
+  background-size: 100% auto;
+}
+.logo{
+  width: 22%;
+  position: absolute;
+  left: 18px;
+  top: 30px;
+}
+.ccLogo{
+  width: 20%;
+  position: absolute;
+  right: 18px;
+  top: 20px;
+}
+
+.center{
+  left: 0;
+  right: 0;
+  position: absolute;
+  bottom: 0;
+  background: url(../images/indexBottom.png) no-repeat bottom right;
+  background-size: 60% auto;
+  .xing{
+    width: 38%;
+    position: relative;
+    left: 5px;
+    display: inline-block;
+  }
+  .text{
+    display: inline-block;
+    margin-top: -20px;
+    position: relative;
+    top: -70px;
+    text-align: center;
+    left: -37px;
+    width: 240px;
+    .xf{
+
+    }
+    .rule{
+      display: inline-block;
+      color: #D2BB7B;
+      font-size: 20px;
+      text-decoration: underline;
+      margin-top: 28px;
+      letter-spacing: 2px;
+    }
+  }
+
+}
+
+.bottom{
+  margin: 100px auto 30px;
+  .car{
+    width: 160px;
+    position: relative;
+    margin: 0 auto -20px;
+    z-index: 1;
+    .carLeft,.carRight{
+      position: absolute;
+      top: 30px;
+      width: 22px;
+      left: 20px;
+      -webkit-animation: rotate 3s  linear 0s infinite forwards;
+    }
+    .carRight{
+      top: 29px;
+      right: -77px;
+    }
+    .light{
+      position: absolute;
+      left: -90px;
+      top: 13px;
+      opacity: .9;
+      width: 110px;
+    }
+  }
+  .dq{
+    width: 40%;
+    position: relative;
+    margin: 0 auto;
+    .dj{
+      position: absolute;
+      top: 0;
+      -webkit-animation: start 2s infinite ease-in-out;
+      animation: start 2s infinite ease-in-out;
+    }
+  }
+}
+@-webkit-keyframes rotate {
+  from{
+    -webkit-transform: rotate(360deg);
+  }
+  to{
+    -webkit-transform: rotate(0deg);
+  }
+ }
+
+@-webkit-keyframes start {
+  0%, 30% {
+    opacity: 0;
+    -webkit-transform: translate(0, 10px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(0, -8px);
+  }
+}

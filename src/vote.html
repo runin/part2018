@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="target-densitydpi=device-dpi, width=640, user-scalable=no">
+  <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js" type="text/javascript"></script>
+  <script src="./static/js/zepto.min.js"></script>
+  <script type="text/javascript">$(function () {var DEFAULT_WIDTH = 640,ua = navigator.userAgent.toLowerCase(),deviceWidth = window.screen.width,devicePixelRatio = window.devicePixelRatio || 1,targetDensitydpi;if(ua.indexOf("android") !== -1 && parseFloat(ua.slice(ua.indexOf("android")+8)) < 4){targetDensitydpi = DEFAULT_WIDTH / deviceWidth * devicePixelRatio * 160;$('meta[name="viewport"]').attr('content', 'target-densitydpi=' + targetDensitydpi + ', width=device-width, user-scalable=no');}});</script>
+  <title></title>
+</head>
+<body data-type="vote">
+
+<section class="main" id="main">
+  <img class="logo" src="./images/voteLogo.png">
+  <div class="top" id="Top">
+    <img id="rightTop" class="right-top" src="./images/vute-top.png">
+    <img class="hand" src="./images/hand.png">
+  </div>
+  <section class="wrap" id="voteWrap"><ul></ul></section>
+  <div class="clear"></div>
+</section>
+
+<section id="qq" class="qq none">
+  <section class="con">
+    <div class="top">
+      <img class="q1" src="./images/q1.png" />
+      <img class="q2" src="./images/q2.png" />
+    </div>
+    <div class="bottom">
+      <img class="car3" src="./images/car3.png">
+      <img class="car-bg" src="./images/carBg.png">
+    </div>
+    <img class="answerbtn" id="answerbtn" src="./images/answerbtn.png">
+  </section>
+</section>
+
+<div class="countdown none" id="answer-countdown">
+  <span class="countdown-tip items-count"></span>
+  <span class="detail-countdown items-count"></span>
+  <span class="loading none">请稍后...</span>
+</div>
+
+<img class="cm" id="cm" src="./images/99.png">
+
+<section class="talk">
+  <div class="top">
+    <label class="ha"><img src="./images/defa.png" /></label>
+    <div class="center">
+      <div class="ni">一路向北</div>
+      <p class="ss"><label>送了</label><span>[gfdsgdfg]</span></p>
+    </div>
+    <div class="imgT"><img src="./images/c1.png"></div>
+  </div>
+  <div class="comments">
+    <ul id="comments_content"></ul>
+    <div class="inp">
+        <header class="horizontal">
+          <div>
+            <span><img src="./images/c1.png" /></span>
+            <label>[应援队驾到]</label>
+          </div>
+          <div>
+            <span><img src="./images/c2.png" /></span>
+            <label>[WEY VV7]</label>
+          </div>
+          <div>
+            <span><img src="./images/c3.png" /></span>
+            <label>[星空]</label>
+          </div>
+        </header>
+        <input id="input-comment" placeholder="wuli春春今天很老公~~" type="text">
+        <a class="submit" id="submit">我有话说</a>
+    </div>
+</div>
+</section>
+
+
+<script src="https://wximg.gtimg.com/shake_tv/include/js/jsapi.js"></script>
+<script src="./static/js/config.js"></script>
+<script src="./static/js/xss.min.js"></script>
+<script src="./static/js/authorize_userinfo.js"></script>
+<script src="./static/js/common.js"></script>
+<script src="./static/js/dialog.js"></script>
+<script type="text/javascript" src="https://tajs.qq.com/stats?sId=45330147" charset="UTF-8"></script>
+</body>
+</html>

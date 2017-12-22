@@ -1,0 +1,49 @@
+.wrap-page{
+    background: url(../images/index-bg.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+.mark{
+    width: 22%;
+    position: absolute;
+    left: 3%;
+    top: 2%;
+}
+.logo{
+    width: 83%;
+    padding-top: 22%;
+    padding-bottom: 5%;
+}
+.h1{
+    width: 85%;
+}
+.go{
+    display: block;
+    position: absolute;
+    width: 350px;
+    height: 86px;
+    margin: 0 auto;
+    bottom: 20%;
+    left: 0;
+    right: 0;
+    background: url(../images/go.png) no-repeat;
+    background-size: 100% 100%;
+}
+.dialog{
+    display: none;
+    position: absolute;
+    width: 430px;
+    height: 630px;
+    top: 50%;
+    left: 50%;
+    margin-left: -215px;
+    margin-top: -315px;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+.dialog .close{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
