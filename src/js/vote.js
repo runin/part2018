@@ -1,6 +1,9 @@
 import '../css/core.css';
 import '../css/vote.scss';
 import Defa from '../images/defa.png';
+import c1 from '../images/c1.png';
+import c2 from '../images/c2.png';
+import c3 from '../images/c3.png';
 ;(function($){
     H.vote = {
         guid: '',
@@ -26,6 +29,27 @@ import Defa from '../images/defa.png';
         },
         event: function(){
             var me = H.vote;
+            var talkFlag = true;
+             $("#cm").bind('touchend', function (e) {
+                e.preventDefault();
+                $("#talk").removeClass('none');
+                $(this).addClass('none');
+                $("#back").removeClass('none');
+                H.talk.resetMack();
+                if(talkFlag){
+                    talkFlag = false;
+                    H.talk.init();
+                }
+                
+            });
+
+            $("#back").bind('touchend', function (e) {
+                e.preventDefault();
+                $("#talk").addClass('none');
+                $(this).addClass('none');
+                $("#cm").removeClass('none');
+            });
+
             $('#answerbtn').bind('touchend', function(e){
                 e.preventDefault();
                 me.btn_animate($(this));
@@ -165,7 +189,6 @@ import Defa from '../images/defa.png';
 })(Zepto);
 $(function(){
     H.vote.init();
-    H.talk.init();
 });
 
 
@@ -173,24 +196,115 @@ $(function(){
     H.talk = {
         $inputCmt: $('#input-comment'),
         REQUEST_CLS: 'requesting',
-
         init: function() {
             this.event();
             H.comment.init();
+            this.dom();
+        },
+        dom: function(){
+            var height = $(window).height();
+            $("#talk .con").css({
+                'top': (height - 313)/2
+            });
+        },
+        spellTopDom: function(index, data){
+            console.log('data', data.id);
+            var me = H.talk;
+            $("#talk .top").html('');
+            var t = simpleTpl();
+                  t._('<label class="ha"><img src="'+ Defa +'" /></label>')
+                  ._('<div class="center vertical">')
+                      ._('<div class="ni">一路向北</div>')
+                      ._('<p class="ss">')
+                        ._('<label>送了</label>')
+                        ._('<span class="xB1 none">[应援队驾到]</span>')
+                        ._('<span class="xB2 none">[WEY VV7]</span>')
+                        ._('<span class="xB3 none">[星空]</span>')
+                      ._('</p>')
+                    ._('</div>')
+                ._('<div class="imgT">')
+                  ._('<img class="xB1 none" src="'+ c1 +'">')
+                  ._('<img class="xB2 none" src="'+ c2 +'">')
+                  ._('<img class="xB3 none" src="'+ c3 +'">')
+                ._('</div>')
+            $("#talk .top").html(t.toString());
+
+            if(!data){
+                var h= headimgurl ? headimgurl + '/64' : Defa;
+                $("#talk .top .ni").text(nickname || "匿名用户");
+                $("#talk .ha img").attr('src', h); 
+            }else if(index){
+                var h= data.hu ? data.hu + '/64' : Defa;
+                $("#talk .top .ni").text(data.na || "匿名用户");
+                $("#talk .ha img").attr('src', h);
+            }
+           $('#talk .top').removeClass('none');
+           $("#talk #mack").removeClass('none');
+           $('#talk').find('.'+index).removeClass('none');
+
+           $("#talk .con img").on("webkitAnimationEnd", function () {
+                me.resetMack();
+           });
+        },
+        resetMack: function(){
+            $("#talk .con img").addClass("none");
+            $("#talk #mack").addClass('none');
         },
         event: function(){
             var me = H.talk;
-            $(".inp").tap(function (e) {
+            $("#talk .items").bind('touchend', function (e) {
                 e.stopPropagation();
+                e.preventDefault();
+                var $this = $(this);
+                
+                if ($this.hasClass(me.REQUEST_CLS)) {
+                    // showTips('发送频率过快,稍后再试');
+                    return;
+                }
+                $this.addClass(me.REQUEST_CLS);
+                var comment = $this.attr('data-type');
+                $.ajax({
+                    type : 'GET',
+                    async : false,
+                    url : domain_url + 'api/comments/save'+dev,
+                    data: {
+                        co: encodeURIComponent(comment),
+                        op: openid,
+                        nickname: nickname ? encodeURIComponent(nickname) : "",
+                        headimgurl: headimgurl ? headimgurl : ""
+                    },
+                    dataType : "jsonp",
+                    jsonpCallback : 'callbackCommentsSave',
+                    complete: function() {
+                        hidenewLoading();
+                        setTimeout(function(){
+                            $this.removeClass(me.REQUEST_CLS);
+                        },1e3);
+                    },
+                    success : function(data) {
+                        if(data.code == 0) {
+                            var meComment = H.comment;
+                            clearInterval(meComment.xbTimer);
+                            me.resetMack();
+                            me.spellTopDom(comment, false);
+                            meComment.xbTimer = setInterval(function () {
+                                meComment.roomXb();
+                            },1500);
+                            
+                            return;
+                        }
+                        showTips("发送失败");
+                    }
+                });
             });
-            $("#submit").tap(function(e) {
+
+            $("#submit").bind('touchend', function(e) {
                 e.stopPropagation();
                 e.preventDefault();
                 if ($(this).hasClass(me.REQUEST_CLS)) {
                     return;
                 }
                 var comment = $.trim(me.$inputCmt.val()) || '',
-                    comment = comment.replace(/<[^>]+>/g, ''),
                     len = comment.length;
 
                 if (len < 1) {
@@ -213,8 +327,7 @@ $(function(){
                     data: {
                         co: encodeURIComponent(comment),
                         op: openid,
-                        ty: 1,
-                        nickname: nickname ? encodeURIComponent($.fn.cookie(mpappid + '_nickname')) : "",
+                        nickname: nickname ? encodeURIComponent(nickname) : "",
                         headimgurl: headimgurl ? headimgurl : ""
                     },
                     dataType : "jsonp",
@@ -260,11 +373,14 @@ $(function(){
 
     
     H.comment = {
+        tmpDataTimer: 1e3,
         timer: 5000,
+        xbTimer: null,
         maxid: 0,
         pageSize: 50,
         $comments: $('#comments'),
         commentsList: new Array(),
+        xbList: new Array(),
         ZDcommentsList: new Array(),
         selfCommentsList: new Array(),
         clsList: ["pink","red","blue","green","brown"],
@@ -280,6 +396,23 @@ $(function(){
             setTimeout(function () {
                 me.getZDComments();
             },8000);
+        },
+        tmpData: function(){
+            var me = this;
+            setTimeout(function(){
+                $.each(xbTmp, function(i, item){
+                    me.commentsList.push(item);
+                });
+            }, me.tmpDataTimer)
+        },
+        checkXb: function(data){
+            var me = this;
+            if(data.co.indexOf('xB') === 0){
+                me.xbList.push(data);
+            }else{
+                me.commentsList.push(data);
+            }
+            me.tmpData();
         },
         getComments: function () {
             var me = this;
@@ -303,7 +436,7 @@ $(function(){
                             me.maxid = data.maxid;
                             for(var i = items.length-1; i >= 0; i--){
                                 if($.inArray(items[i].uid, me.selfCommentsList) < 0){
-                                    me.commentsList.push(items[i]);
+                                    me.checkXb(items[i]);
                                 }
                             }
                         }
@@ -313,7 +446,7 @@ $(function(){
                 }
             });
         },
-        getZDComments: function () {
+        getZDComments: function () {//置顶分页获取评论信息
             var me = this;
             $.ajax({
                 type : 'GET',
@@ -339,7 +472,7 @@ $(function(){
                             setInterval(function(){
                                 if(me.commentsList.length > 0){
                                     var i = getRandomArbitrary(0,items.length);
-                                    me.commentsList.push(me.ZDcommentsList[i]);
+                                    me.checkXb(me.ZDcommentsList[i]);
                                 }
                             },8000);
                         }
@@ -349,13 +482,32 @@ $(function(){
                 }
             });
         },
+        roomXb: function(){
+            var me = this;
+            if(me.xbList.length > 0){
+                
+                var cmt = me.xbList.shift();
+
+                if(cmt.co.indexOf('xB') === 0){   
+                    H.talk.spellTopDom(cmt.co,cmt);
+                }
+            }
+        },
         showComments: function () {
             var me = this;
+
+
+            me.xbTimer = setInterval(function () {
+                me.roomXb();
+            },1500);
+
             setInterval(function () {
                 if(me.commentsList.length > 0){
+
                     var t = new simpleTpl();
                     var cls = getRandomArbitrary(0,5);
                     var cmt = me.commentsList.shift();
+                    
                     t._('<li><div class="'+me.clsList[cls]+'"><span class="ni"><img src="'+ (cmt.hu+'/64' || headimgurl + '/64') +'"></span><span class="con">' + filterXSS(cmt.co) + '</span></div></li>');
                     $("#comments_content").append(t.toString());
                     var n = $("#comments_content").find("li").length;

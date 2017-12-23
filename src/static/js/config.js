@@ -35,4 +35,42 @@ var copyright = '页面由江苏卫视提供<br>新掌趣科技技术支持 & Po
 var rule_temp = '';
 var crossdayLimit = 1 * 60 * 60 * 1000;	//跨天摇奖判断阀值，默认为1小时。单位ms
 
+var xbTmp = [
+				{
+					id: 1046,
+					uid: "e1cf09cea12446378aef690ebbb146f5",
+					op: "04efa0ecbed77ef38c1be9d16da2ee1e",
+					na: "xxxxx用户1",
+					im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
+					hu: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
+					tid: "",
+					co: "xxxxx用户1",
+					at: "2017-12-23 20:24:48",
+					ats: "2分钟前"
+				},
+				{
+					id: 1045,
+					uid: "ce8e4fd10ca745238fbf768b4a84e0e8",
+					op: "04efa0ecbed77ef38c1be9d16da2ee1e",
+					na: "xxxxx用户2",
+					im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
+					hu: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
+					tid: "",
+					co: "xxxxx用户2",
+					at: "2017-12-23 20:24:43",
+					ats: "2分钟前"
+				},
+				{
+					id: 1044,
+					uid: "e2718986c83a452da495b50de4d236dc",
+					op: "04efa0ecbed77ef38c1be9d16da2ee1e",
+					na: "xxxxx用户3",
+					im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
+					hu: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
+					tid: "",
+					co: "xxxxx用户3",
+					at: "2017-12-23 20:11:04",
+					ats: "16分钟前"
+			}
+		]
 var dev = '?dev=shang';

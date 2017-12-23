@@ -21,7 +21,7 @@ module.exports = {
       favicon: './src/images/logo.png',
       showErrors: true,
       inject: 'body',
-      excludeChunks: ['answer', 'lottery']
+      excludeChunks: ['answer', 'lottery', 'vote']
     }),
     new HtmlWebpackPlugin({
       template: __dirname + '/src/lottery.html',
@@ -30,7 +30,7 @@ module.exports = {
       favicon: './src/images/logo.png',
       showErrors: true,
       inject: 'body',
-      excludeChunks: ['index', 'answer'],
+      excludeChunks: ['index', 'answer', 'vote'],
     }),
     new HtmlWebpackPlugin({
       template: __dirname + '/src/answer.html',
@@ -39,7 +39,7 @@ module.exports = {
       favicon: './src/images/logo.png',
       showErrors: true,
       inject: 'body',
-      excludeChunks: ['index', 'lottery'],
+      excludeChunks: ['index', 'lottery', 'vote'],
     }),
     new HtmlWebpackPlugin({
       template: __dirname + '/src/vote.html',
@@ -49,6 +49,15 @@ module.exports = {
       showErrors: true,
       inject: 'body',
       excludeChunks: ['index'],
+    }),
+    new HtmlWebpackPlugin({
+      template: __dirname + '/src/safe.html',
+      filename: 'safe.html',
+      hash: true,
+      favicon: './src/images/logo.png',
+      showErrors: true,
+      inject: 'body',
+      excludeChunks: ['index', 'lottery', 'answer', 'vote'],
     }),
     new CopyWebpackPlugin([
       {

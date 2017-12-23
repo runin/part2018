@@ -257,11 +257,15 @@ body[data-type="vote"] .main{
 	}
 }
 
-body[data-type="vote"] .cm{
+body[data-type="vote"] .cm, .back{
 	position: absolute;
 	right: 0;
 	top: 60vh;
 	width: 54px;
+}
+body[data-type="vote"] .back{
+	width: 64px;
+	z-index: 9;
 }
 
 @-webkit-keyframes zan {
@@ -377,6 +381,7 @@ body[data-type="vote"] .cm{
   }
 }
 
+
 body[data-type="vote"] .talk{
 	position: absolute;
     width: 100%;
@@ -386,7 +391,16 @@ body[data-type="vote"] .talk{
     color: #FFF;
     text-align: center;
     overflow: hidden;
-    overflow-y: scroll;
+    .mack{
+		.con{
+			position: absolute;
+			z-index: 9;
+			img{
+				-webkit-animation: scaleZoom 1s ease-in-out;
+				animation: scaleZoom 1s ease-in-out;
+			}
+		}
+    }
 	&:after {
 	    content:'';
 	    position:fixed;
@@ -400,20 +414,24 @@ body[data-type="vote"] .talk{
 	.top{
 		position: absolute;
 		top: 15px;
-		left: 5%;
-		width: 415px;
+		left: 4%;
+		width: 400px;
 		height: 70px;
 		line-height: 70px;
 		z-index: 8;
-		background: rgba(205, 195, 180, 1);
+		background: rgba(205, 195, 180, .2);
 		border-radius: 20px;
 		.center{
-			display: inline-block;
+			display: -webkit-box;
+			margin-left: 51px;
 		}
 		.ha{
-			width: 45px;
-			height: 45px;
-			display: inline-block;
+		    width: 45px;
+		    height: 45px;
+		    display: -webkit-box;
+		    margin-top: 13px;
+		    position: absolute;
+		    margin-left: 20px;
 			img{
 				border-radius: 100%;
 			}
@@ -421,17 +439,37 @@ body[data-type="vote"] .talk{
 		.ni{
 			font-size: 16px;
 			color: #9D9688;
-			display: inline-block;
+			display: -webkit-box;
+		    line-height: 42px;
+			height: 42px;
+			max-width: 155px; 
+			text-overflow: ellipsis;
+			-webkit-line-clamp : 1;
+			-webkit-box-orient : vertical;
+			overflow : hidden;
+		    text-align: left;
 		}
 		.ss{
+			line-height: 7px;
+			display: -webkit-box;
 			label, span{
 				font-size: 20px;
 				color: #FFF;
 			}
 		}
 		.imgT{
-			width: 120px;
+			width: 106px;
 			display: inline-block;
+		    padding-top: 6px;
+    		margin-left: 35px;
+    		img{
+    			&:first-child{
+    				width: 60px;
+    			}
+    			&:last-child{
+    				width: 68px;
+    			}
+    		}
 		}
 	}
 	.comments{
@@ -551,4 +589,17 @@ body[data-type="vote"] .talk{
 	    line-height: 70px;
 	    color: #FFF;
 	}
+}
+
+@-webkit-keyframes scaleZoom {
+  from {
+	opacity:0;
+	-webkit-transform:scale(0.3);
+	transform:scale(0.3);
+  }
+  to {
+	opacity:1;
+	-webkit-transform:scale(1);
+	transform:scale(1);
+  }
 }

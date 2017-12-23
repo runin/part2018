@@ -1,7 +1,7 @@
 ; (function (w) {
     w.matk = "hlgtrkhlktrlh";//$.fn.cookie(mpappid + '_matk');
     w.openid = "hlgtrkhlktrlh";//$.fn.cookie(mpappid + '_openid');
-    w.headimgurl = "hlgtrkhlktrlh";//$.fn.cookie(mpappid + '_headimgurl');
+    w.headimgurl = "http://wx.qlogo.cn/mmopen/MLFA9ib6vYu77OVYADnYZtdXQFGg1ATYewWP7RIEpWDmibBqJNfC5klZkAP69WoL4aw9USrqhmemcu5CsVlBntuIDyyJKFX3Du";//$.fn.cookie(mpappid + '_headimgurl');
     w.nickname = "hlgtrkhlktrlh";//$.fn.cookie(mpappid + '_nickname');
     w.expires_in = { expires: 30 };
     w.matk_expires_in = { expires: 1 };
