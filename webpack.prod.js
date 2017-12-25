@@ -6,7 +6,7 @@ module.exports = merge(common, {
   devtool: 'source-map',
   plugins: [
     new UglifyJSPlugin({//压缩
-      sourceMap: true
+      sourceMap: false
     })
   ]
 });

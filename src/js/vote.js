@@ -252,10 +252,10 @@ var xbTmp = [
                     if(data.code == 0){
                         me.guid = data.items[0].guid;
                         me.inforoudData = data.items[0].pitems;
-                        // me.spellDom(me.inforoudData);
+                        me.spellDom(me.inforoudData);
 
 
-                        me.spellDom(testData);
+                        // me.spellDom(testData);
                         me.voteSupport();
                     }
                 },

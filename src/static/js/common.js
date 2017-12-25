@@ -842,10 +842,10 @@ $(function() {
                     });
                 }
             }
-            // new Authorize({callBackPage:"index.html"}).init(check_weixin_login());
+            new Authorize({callBackPage:"index.html"}).init(check_weixin_login());
         },
         error : function() {
-            // new Authorize({callBackPage:"index.html"}).init(check_weixin_login());
+            new Authorize({callBackPage:"index.html"}).init(check_weixin_login());
         }
     });
     
