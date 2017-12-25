@@ -409,6 +409,7 @@ body[data-type="vote"] .talk{
     text-align: center;
     overflow: hidden;
     .mack{
+    	pointer-events: none;
 		.con{
 			position: absolute;
 			z-index: 9;

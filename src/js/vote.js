@@ -227,6 +227,8 @@ var xbTmp = [
         init: function(){
             this.event();
             this.getVoteinfo();
+            /*delData('answered_3d98cd0a9fef434fb1610574b68449ab');
+            delData('answerLotteryed_3d98cd0a9fef434fb1610574b68449ab');*/
         },
         getVoteinfo: function(){
             var me = H.vote;
@@ -250,10 +252,10 @@ var xbTmp = [
                     if(data.code == 0){
                         me.guid = data.items[0].guid;
                         me.inforoudData = data.items[0].pitems;
-                        me.spellDom(me.inforoudData);
+                        // me.spellDom(me.inforoudData);
 
 
-                        // me.spellDom(testData);
+                        me.spellDom(testData);
                         me.voteSupport();
                     }
                 },
