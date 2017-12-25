@@ -11,7 +11,7 @@ import '../css/dialog.css';
     event: function () {
       $("#main").swipeUp(function (e) {
         e.preventDefault();
-        toUrl('lottery.html');
+        toUrl('vote.html');
       });
       $("#rule").bind('touchend',function (e) {
         e.preventDefault();

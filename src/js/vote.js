@@ -30,7 +30,7 @@ var xbTmp = [
                     op: "04efa0ecbed77ef38c1be9d16da2ee1e",
                     na: "xxxxx用户1",
                     im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
-                    hu: hq1.slice(0,-3),
+                    hu: hq1,
                     tid: "",
                     co: "给荔枝跨年打call",
                     at: "2017-12-23 20:24:48",
@@ -42,7 +42,7 @@ var xbTmp = [
                     op: "04efa0ecbed77ef38c1be9d16da2ee1e",
                     na: "xxxxx用户2",
                     im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
-                    hu: hq2.slice(0,-3),
+                    hu: hq2,
                     tid: "",
                     co: "江苏卫视良心跨年",
                     at: "2017-12-23 20:24:43",
@@ -54,7 +54,7 @@ var xbTmp = [
                     op: "04efa0ecbed77ef38c1be9d16da2ee1e",
                     na: "xxxxx用户3",
                     im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
-                    hu: hq3.slice(0,-3),
+                    hu: hq3,
                     tid: "",
                     co: "果然还是江苏卫视舞美震撼",
                     at: "2017-12-23 20:11:04",
@@ -66,7 +66,7 @@ var xbTmp = [
                     op: "04efa0ecbed77ef38c1be9d16da2ee1e",
                     na: "xxxxx用户3",
                     im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
-                    hu: hq4.slice(0,-3),
+                    hu: hq4,
                     tid: "",
                     co: "跨年演唱会还是要看江苏卫视",
                     at: "2017-12-23 20:11:04",
@@ -78,7 +78,7 @@ var xbTmp = [
                     op: "04efa0ecbed77ef38c1be9d16da2ee1e",
                     na: "xxxxx用户3",
                     im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
-                    hu: hq5.slice(0,-3),
+                    hu: hq5,
                     tid: "",
                     co: "这舞美真心美炸了",
                     at: "2017-12-23 20:11:04",
@@ -90,7 +90,7 @@ var xbTmp = [
                     op: "04efa0ecbed77ef38c1be9d16da2ee1e",
                     na: "xxxxx用户3",
                     im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
-                    hu: hq6.slice(0,-3),
+                    hu: hq6,
                     tid: "",
                     co: "选择江苏卫视明智之选",
                     at: "2017-12-23 20:11:04",
@@ -102,7 +102,7 @@ var xbTmp = [
                     op: "04efa0ecbed77ef38c1be9d16da2ee1e",
                     na: "xxxxx用户3",
                     im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
-                    hu: hq7.slice(0,-3),
+                    hu: hq7,
                     tid: "",
                     co: "我天我已经不想换台",
                     at: "2017-12-23 20:11:04",
@@ -114,7 +114,7 @@ var xbTmp = [
                     op: "04efa0ecbed77ef38c1be9d16da2ee1e",
                     na: "xxxxx用户3",
                     im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
-                    hu: hq8.slice(0,-3),
+                    hu: hq8,
                     tid: "",
                     co: "江苏卫视跨年收视第一",
                     at: "2017-12-23 20:11:04",
@@ -126,7 +126,7 @@ var xbTmp = [
                     op: "04efa0ecbed77ef38c1be9d16da2ee1e",
                     na: "xxxxx用户3",
                     im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
-                    hu: hq9.slice(0,-3),
+                    hu: hq9,
                     tid: "",
                     co: "荔枝又开挂了",
                     at: "2017-12-23 20:11:04",
@@ -138,7 +138,7 @@ var xbTmp = [
                     op: "04efa0ecbed77ef38c1be9d16da2ee1e",
                     na: "xxxxx用户3",
                     im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
-                    hu: hq10.slice(0,-3),
+                    hu: hq10,
                     tid: "",
                     co: "荔枝跨年秒杀其他所有",
                     at: "2017-12-23 20:11:04",
@@ -150,7 +150,7 @@ var xbTmp = [
                     op: "04efa0ecbed77ef38c1be9d16da2ee1e",
                     na: "xxxxx用户3",
                     im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
-                    hu: hq11.slice(0,-3),
+                    hu: hq11,
                     tid: "",
                     co: "真唱除了荔枝台还有谁",
                     at: "2017-12-23 20:11:04",
@@ -162,7 +162,7 @@ var xbTmp = [
                     op: "04efa0ecbed77ef38c1be9d16da2ee1e",
                     na: "xxxxx用户3",
                     im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
-                    hu: hq12.slice(0,-3),
+                    hu: hq12,
                     tid: "",
                     co: "锁定荔枝果然不后悔",
                     at: "2017-12-23 20:11:04",
@@ -174,7 +174,7 @@ var xbTmp = [
                     op: "04efa0ecbed77ef38c1be9d16da2ee1e",
                     na: "xxxxx用户3",
                     im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
-                    hu: hq13.slice(0,-3),
+                    hu: hq13,
                     tid: "",
                     co: "真唱都能唱这么好",
                     at: "2017-12-23 20:11:04",
@@ -186,7 +186,7 @@ var xbTmp = [
                     op: "04efa0ecbed77ef38c1be9d16da2ee1e",
                     na: "xxxxx用户3",
                     im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
-                    hu: hq14.slice(0,-3),
+                    hu: hq14,
                     tid: "",
                     co: "简直酷炫",
                     at: "2017-12-23 20:11:04",
@@ -198,7 +198,7 @@ var xbTmp = [
                     op: "04efa0ecbed77ef38c1be9d16da2ee1e",
                     na: "xxxxx用户3",
                     im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
-                    hu: hq15.slice(0,-3),
+                    hu: hq15,
                     tid: "",
                     co: "最幸福的一件事就是和爱的人一起看江苏卫视跨年",
                     at: "2017-12-23 20:11:04",
@@ -210,7 +210,7 @@ var xbTmp = [
                     op: "04efa0ecbed77ef38c1be9d16da2ee1e",
                     na: "xxxxx用户3",
                     im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
-                    hu: hq16.slice(0,-3),
+                    hu: hq16,
                     tid: "",
                     co: "主持天团我好喜欢噢",
                     at: "2017-12-23 20:11:04",
@@ -465,11 +465,11 @@ $(function(){
             $("#talk .top").html(t.toString());
 
             if(!data){
-                var h= headimgurl ? headimgurl + '/64' : Defa;
+                var h= headimgurl ? headimgurl : Defa;
                 $("#talk .top .ni").text(nickname || "匿名用户");
                 $("#talk .ha img").attr('src', h); 
             }else if(index){
-                var h= data.hu ? data.hu + '/64' : Defa;
+                var h= data.hu ? data.hu : Defa;
                 $("#talk .top .ni").text(data.na || "匿名用户");
                 $("#talk .ha img").attr('src', h);
             }
@@ -575,7 +575,7 @@ $(function(){
                         if(data.code == 0) {
                             showTips('发送成功');
                             var cls = getRandomArbitrary(0,5);
-                            var h= headimgurl ? headimgurl + '/64' : Defa;
+                            var h= headimgurl ? headimgurl : Defa;
                             var t = new simpleTpl();
                             t._('<li><div class="'+meComment.clsList[cls]+'"><span class="ni"><img src="'+ h +'"></span><span class="con">' + filterXSS(comment) + '</span></div></li>');
                             $("#comments_content").append(t.toString());
@@ -746,7 +746,7 @@ $(function(){
                     var cls = getRandomArbitrary(0,5);
                     var cmt = me.commentsList.shift();
                     
-                    t._('<li><div class="'+me.clsList[cls]+'"><span class="ni"><img src="'+ (cmt.hu+'/64' || headimgurl + '/64') +'"></span><span class="con">' + filterXSS(cmt.co) + '</span></div></li>');
+                    t._('<li><div class="'+me.clsList[cls]+'"><span class="ni"><img src="'+ (cmt.hu || headimgurl) +'"></span><span class="con">' + filterXSS(cmt.co) + '</span></div></li>');
                     $("#comments_content").append(t.toString());
                     var n = $("#comments_content").find("li").length;
                     if(n >= 6){

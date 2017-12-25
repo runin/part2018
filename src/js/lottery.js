@@ -45,7 +45,7 @@ import yaoDefault from "../images/bg-yao-default.jpg"
                 me.resize();
                 me.shake();
                 me.link();
-                me.keyDown();
+                // me.keyDown();
                 me.ping();
             }
             
