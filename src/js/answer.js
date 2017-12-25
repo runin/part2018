@@ -222,7 +222,9 @@ var tid = null;//期数uuid
 			me.countdown_domShow(endTimeStr,"距答题结束还有", pra);
 			
 			if($("body").attr('data-type') === "vote" && !getData('answered_'+tid)){
+				if(getData('count')) return;
 				$("#qq").removeClass('none');
+				saveData('count', 1);
 			}
 		},
 		countdown_domShow: function(time, word, pra){

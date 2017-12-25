@@ -4,6 +4,220 @@ import Defa from '../images/defa.png';
 import c1 from '../images/c1.png';
 import c2 from '../images/c2.png';
 import c3 from '../images/c3.png';
+
+import hq1 from '../images/head/0q.jpg';
+import hq2 from '../images/head/1q.jpg';
+import hq3 from '../images/head/2q.jpg';
+import hq4 from '../images/head/3q.jpg';
+import hq5 from '../images/head/4q.jpg';
+import hq6 from '../images/head/5q.jpg';
+import hq7 from '../images/head/6q.jpg';
+import hq8 from '../images/head/7q.jpg';
+import hq9 from '../images/head/8q.jpg';
+import hq10 from '../images/head/9q.jpg';
+import hq11 from '../images/head/10q.jpg';
+import hq12 from '../images/head/11q.jpg';
+import hq13 from '../images/head/12q.jpg';
+import hq14 from '../images/head/13q.jpg';
+import hq15 from '../images/head/14q.jpg';
+import hq16 from '../images/head/15q.jpg';
+
+
+var xbTmp = [
+                {
+                    id: 10001,
+                    uid: "e1cf09cea12446378aef690ebbb146f5",
+                    op: "04efa0ecbed77ef38c1be9d16da2ee1e",
+                    na: "xxxxx用户1",
+                    im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
+                    hu: hq1.slice(0,-3),
+                    tid: "",
+                    co: "给荔枝跨年打call",
+                    at: "2017-12-23 20:24:48",
+                    ats: "2分钟前"
+                },
+                {
+                    id: 10002,
+                    uid: "ce8e4fd10ca745238fbf768b4a84e0e8",
+                    op: "04efa0ecbed77ef38c1be9d16da2ee1e",
+                    na: "xxxxx用户2",
+                    im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
+                    hu: hq2.slice(0,-3),
+                    tid: "",
+                    co: "江苏卫视良心跨年",
+                    at: "2017-12-23 20:24:43",
+                    ats: "2分钟前"
+                },
+                {
+                    id: 10003,
+                    uid: "e2718986c83a452da495b50de4d236dc",
+                    op: "04efa0ecbed77ef38c1be9d16da2ee1e",
+                    na: "xxxxx用户3",
+                    im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
+                    hu: hq3.slice(0,-3),
+                    tid: "",
+                    co: "果然还是江苏卫视舞美震撼",
+                    at: "2017-12-23 20:11:04",
+                    ats: "16分钟前"
+                },
+                {
+                    id: 10004,
+                    uid: "e2718986c83a452da495b50de4d236dc",
+                    op: "04efa0ecbed77ef38c1be9d16da2ee1e",
+                    na: "xxxxx用户3",
+                    im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
+                    hu: hq4.slice(0,-3),
+                    tid: "",
+                    co: "跨年演唱会还是要看江苏卫视",
+                    at: "2017-12-23 20:11:04",
+                    ats: "16分钟前"
+                },
+                {
+                    id: 10005,
+                    uid: "e2718986c83a452da495b50de4d236dc",
+                    op: "04efa0ecbed77ef38c1be9d16da2ee1e",
+                    na: "xxxxx用户3",
+                    im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
+                    hu: hq5.slice(0,-3),
+                    tid: "",
+                    co: "这舞美真心美炸了",
+                    at: "2017-12-23 20:11:04",
+                    ats: "16分钟前"
+                },
+                {
+                    id: 10006,
+                    uid: "e2718986c83a452da495b50de4d236dc",
+                    op: "04efa0ecbed77ef38c1be9d16da2ee1e",
+                    na: "xxxxx用户3",
+                    im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
+                    hu: hq6.slice(0,-3),
+                    tid: "",
+                    co: "选择江苏卫视明智之选",
+                    at: "2017-12-23 20:11:04",
+                    ats: "16分钟前"
+                },
+                {
+                    id: 10007,
+                    uid: "e2718986c83a452da495b50de4d236dc",
+                    op: "04efa0ecbed77ef38c1be9d16da2ee1e",
+                    na: "xxxxx用户3",
+                    im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
+                    hu: hq7.slice(0,-3),
+                    tid: "",
+                    co: "我天我已经不想换台",
+                    at: "2017-12-23 20:11:04",
+                    ats: "16分钟前"
+                },
+                {
+                    id: 10008,
+                    uid: "e2718986c83a452da495b50de4d236dc",
+                    op: "04efa0ecbed77ef38c1be9d16da2ee1e",
+                    na: "xxxxx用户3",
+                    im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
+                    hu: hq8.slice(0,-3),
+                    tid: "",
+                    co: "江苏卫视跨年收视第一",
+                    at: "2017-12-23 20:11:04",
+                    ats: "16分钟前"
+                },
+                {
+                    id: 10009,
+                    uid: "e2718986c83a452da495b50de4d236dc",
+                    op: "04efa0ecbed77ef38c1be9d16da2ee1e",
+                    na: "xxxxx用户3",
+                    im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
+                    hu: hq9.slice(0,-3),
+                    tid: "",
+                    co: "荔枝又开挂了",
+                    at: "2017-12-23 20:11:04",
+                    ats: "16分钟前"
+                },
+                {
+                    id: 10010,
+                    uid: "e2718986c83a452da495b50de4d236dc",
+                    op: "04efa0ecbed77ef38c1be9d16da2ee1e",
+                    na: "xxxxx用户3",
+                    im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
+                    hu: hq10.slice(0,-3),
+                    tid: "",
+                    co: "荔枝跨年秒杀其他所有",
+                    at: "2017-12-23 20:11:04",
+                    ats: "16分钟前"
+                },
+                {
+                    id: 10011,
+                    uid: "e2718986c83a452da495b50de4d236dc",
+                    op: "04efa0ecbed77ef38c1be9d16da2ee1e",
+                    na: "xxxxx用户3",
+                    im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
+                    hu: hq11.slice(0,-3),
+                    tid: "",
+                    co: "真唱除了荔枝台还有谁",
+                    at: "2017-12-23 20:11:04",
+                    ats: "16分钟前"
+                },
+                {
+                    id: 10012,
+                    uid: "e2718986c83a452da495b50de4d236dc",
+                    op: "04efa0ecbed77ef38c1be9d16da2ee1e",
+                    na: "xxxxx用户3",
+                    im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
+                    hu: hq12.slice(0,-3),
+                    tid: "",
+                    co: "锁定荔枝果然不后悔",
+                    at: "2017-12-23 20:11:04",
+                    ats: "16分钟前"
+                },
+                {
+                    id: 10013,
+                    uid: "e2718986c83a452da495b50de4d236dc",
+                    op: "04efa0ecbed77ef38c1be9d16da2ee1e",
+                    na: "xxxxx用户3",
+                    im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
+                    hu: hq13.slice(0,-3),
+                    tid: "",
+                    co: "真唱都能唱这么好",
+                    at: "2017-12-23 20:11:04",
+                    ats: "16分钟前"
+                },
+                {
+                    id: 10014,
+                    uid: "e2718986c83a452da495b50de4d236dc",
+                    op: "04efa0ecbed77ef38c1be9d16da2ee1e",
+                    na: "xxxxx用户3",
+                    im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
+                    hu: hq14.slice(0,-3),
+                    tid: "",
+                    co: "简直酷炫",
+                    at: "2017-12-23 20:11:04",
+                    ats: "16分钟前"
+                },
+                {
+                    id: 10015,
+                    uid: "e2718986c83a452da495b50de4d236dc",
+                    op: "04efa0ecbed77ef38c1be9d16da2ee1e",
+                    na: "xxxxx用户3",
+                    im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
+                    hu: hq15.slice(0,-3),
+                    tid: "",
+                    co: "最幸福的一件事就是和爱的人一起看江苏卫视跨年",
+                    at: "2017-12-23 20:11:04",
+                    ats: "16分钟前"
+                },
+                {
+                    id: 10016,
+                    uid: "e2718986c83a452da495b50de4d236dc",
+                    op: "04efa0ecbed77ef38c1be9d16da2ee1e",
+                    na: "xxxxx用户3",
+                    im: "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5zibaUichPjt3Zp9iaOEltzticjlLPXUYA4XEFX5eCtxKkHw",
+                    hu: hq16.slice(0,-3),
+                    tid: "",
+                    co: "主持天团我好喜欢噢",
+                    at: "2017-12-23 20:11:04",
+                    ats: "16分钟前"
+                }
+        ];
+
 ;(function($){
     H.vote = {
         guid: '',
@@ -36,10 +250,10 @@ import c3 from '../images/c3.png';
                     if(data.code == 0){
                         me.guid = data.items[0].guid;
                         me.inforoudData = data.items[0].pitems;
-                        // me.spellDom(me.inforoudData);
+                        me.spellDom(me.inforoudData);
 
 
-                        me.spellDom(testData);
+                        // me.spellDom(testData);
                         me.voteSupport();
                     }
                 },
@@ -392,13 +606,13 @@ $(function(){
 
     
     H.comment = {
-        tmpDataTimer: 1e3,
+        tmpDataTimer: 300e3,
         timer: 5000,
         xbTimer: null,
         maxid: 0,
         pageSize: 50,
         $comments: $('#comments'),
-        commentsList: new Array(),
+        commentsList: xbTmp,
         xbList: new Array(),
         ZDcommentsList: new Array(),
         selfCommentsList: new Array(),
@@ -418,10 +632,13 @@ $(function(){
         },
         tmpData: function(){
             var me = this;
-            setTimeout(function(){
-                $.each(xbTmp, function(i, item){
+            setInterval(function(){
+                var randIndex = getRandomArbitrary(0,16);
+
+                /*$.each(xbTmp, function(i, item){
                     me.commentsList.push(item);
-                });
+                });*/
+                me.commentsList.push(xbTmp[randIndex]);
             }, me.tmpDataTimer)
         },
         checkXb: function(data){
@@ -539,6 +756,8 @@ $(function(){
     };
 
 })(Zepto);
+
+
 
 
 var testData = [
@@ -822,4 +1041,4 @@ var testData = [
                         in: "",
                         re: 0
                     }
-                ]
+                ];
