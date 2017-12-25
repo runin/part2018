@@ -13,7 +13,7 @@ var shaketv_appid  = 'wx801857adaf27891e';
 var yao_tv_id = 51101;
 
 //正式
-// var serviceNo = "tv_jiangsu_all";
+// var serviceNo = "tv_jiangsu_part";
 // var stationUuid = "4160bcaf21e9495f9cf17fe9689f5bbb";
 // var channelUuid = "c6ca92df04f2498a929806b22cb866ef";
 // var mpappid = "wx9097d74006e67df3";

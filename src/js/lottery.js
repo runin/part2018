@@ -44,8 +44,9 @@ import yaoDefault from "../images/bg-yao-default.jpg"
                 me.event();
                 me.resize();
                 me.shake();
-                this.link();
-                this.keyDown();
+                me.link();
+                me.keyDown();
+                me.ping();
             }
             
         },
@@ -152,6 +153,10 @@ import yaoDefault from "../images/bg-yao-default.jpg"
                 complete: function() {
                 },
                 success: function(data) {
+                    if(data.flow && data.flow == 1){
+                        toUrl('safe.html')
+                        return;
+                    }
                     if(data.result == true){
                         me.nowTime = timeTransform(data.sctm);
                         var nowTimeStemp = new Date().getTime();
@@ -170,7 +175,8 @@ import yaoDefault from "../images/bg-yao-default.jpg"
                     }
                 },
                 error: function(xmlHttpRequest, error) {
-                    me.safeLotteryMode('on');
+                    toUrl('safe.html');
+                    //me.safeLotteryMode('on');
                 }
             });
         }, 

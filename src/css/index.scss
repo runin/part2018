@@ -20,40 +20,40 @@ body{
   left: 0;
   right: 0;
   position: absolute;
-  bottom: 0;
+  bottom: 30px;
   background: url(../images/indexBottom.png) no-repeat bottom right;
   background-size: 60% auto;
-  .xing{
-    width: 38%;
-    position: relative;
-    left: 5px;
-    display: inline-block;
-  }
-  .text{
-    display: inline-block;
-    margin-top: -20px;
-    position: relative;
-    top: -70px;
-    text-align: center;
-    left: -37px;
-    width: 240px;
-    .xf{
+  .top{
 
-    }
-    .rule{
-      display: inline-block;
-      color: #D2BB7B;
-      font-size: 20px;
-      text-decoration: underline;
-      margin-top: 28px;
-      letter-spacing: 2px;
-    }
+      .xing{
+        width: 38%;
+        position: relative;
+        left: 5px;
+        display: inline-block;
+      }
+      .text{
+        display: inline-block;
+        margin-top: -20px;
+        position: relative;
+        top: -70px;
+        text-align: center;
+        left: -37px;
+        width: 240px;
+        .rule{
+          display: inline-block;
+          color: #D2BB7B;
+          font-size: 20px;
+          text-decoration: underline;
+          margin-top: 28px;
+          letter-spacing: 2px;
+        }
+      }
   }
 
 }
 
 .bottom{
-  margin: 100px auto 30px;
+  margin: 10px auto 30px;
   .car{
     width: 160px;
     position: relative;

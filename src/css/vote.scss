@@ -262,12 +262,29 @@ body[data-type="vote"] .cm, .back{
 	right: 0;
 	top: 60vh;
 	width: 54px;
+	-webkit-animation-name:fdsx;
+    -webkit-animation-duration: .8s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-fill-mode:forwards;
+    animation-direction:alternate;
+	-webkit-animation-direction:alternate;
 }
 body[data-type="vote"] .back{
 	width: 64px;
 	z-index: 9;
 }
 
+@-webkit-keyframes fdsx {
+  from {
+	-webkit-transform:scale(0.5);
+	transform:scale(0.5);
+  }
+  to {
+	-webkit-transform:scale(1);
+	transform:scale(1);
+  }
+}
 @-webkit-keyframes zan {
   from {
 	opacity:0;

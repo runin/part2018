@@ -197,8 +197,8 @@
                     ._('<section class="dialog redbag-dialog" data-collect="true" data-collect-flag="dialog-redbag-btn-redbagLottery-use" data-collect-desc="弹层(红包)-立即领取按钮">')
                     ._('<a href="javascript:void(0);" class="btn-dialog-close" id="btn-dialog-close" data-collect="true" data-collect-flag="dialog-redbag-btn-close" data-collect-desc="弹层(红包)-关闭按钮"></a>')
                     ._('<fieldset class="dialog-content">')
-                    ._('<legend class="tlt"><img src="images/win-prize.png" /></legend>')
-                    /*._('<p class="award-luckTips"><img src="./images/icon-luckytips.png"></p>')
+                    /*._('<legend class="tlt"><img src="images/win-prize.png" /></legend>')
+                    ._('<p class="award-luckTips"><img src="./images/icon-luckytips.png"></p>')
                      ._('<p class="award-keyTips"></p>')*/
                      ._('<div class="bbg"><img class="award-img" src=""></div>')
                     ._('<section class="btn-lottery-box">')

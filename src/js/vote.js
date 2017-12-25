@@ -15,7 +15,36 @@ import c3 from '../images/c3.png';
             this.getVoteinfo();
         },
         getVoteinfo: function(){
-            getResult('api/voteguess/inforoud', {}, 'callbackVoteguessInfoHandler', true);
+            var me = H.vote;
+            shownewLoading();
+            $.ajax({
+                type : 'GET',
+                async : false,
+                url : domain_url + 'api/voteguess/inforoud' + dev,
+                data: {},
+                dataType : "jsonp",
+                jsonpCallback : 'callbackVoteguessInfoHandler',
+                timeout: 11000,
+                complete: function() {
+                    hidenewLoading();
+                },
+                success : function(data) {
+                    if(data.flow && data.flow == 1){
+                        toUrl('safe.html')
+                        return;
+                    }
+                    if(data.code == 0){
+                        me.guid = data.items[0].guid;
+                        me.inforoudData = data.items[0].pitems;
+                        // me.spellDom(me.inforoudData);
+
+
+                        me.spellDom(testData);
+                        me.voteSupport();
+                    }
+                },
+                error : function(xmlHttpRequest, error) {}
+            });
         },
         voteSupport: function() {
             var me =  H.vote;
@@ -90,6 +119,8 @@ import c3 from '../images/c3.png';
                             setTimeout(function(){
                                 $this.find('.add').removeClass('added').removeClass('zan');
                             },1000)
+                        }else{
+                            console.log(data.message);
                         }
                     },
                     error: function(xmlHttpRequest, error) {}
@@ -142,18 +173,6 @@ import c3 from '../images/c3.png';
             setTimeout(function(e){
                 $(".main").removeClass("ss");
             },1000);
-        }
-    };
-    W.callbackVoteguessInfoHandler = function(data){
-        var me = H.vote;
-        if(data.code == 0){
-            me.guid = data.items[0].guid;
-            me.inforoudData = data.items[0].pitems;
-            me.spellDom(me.inforoudData);
-
-
-            // me.spellDom(testData);
-            me.voteSupport();
         }
     };
     W.callbackVoteguessGroupplayerticketsHandler = function(data) {
@@ -521,7 +540,7 @@ $(function(){
 
 })(Zepto);
 
-/*
+
 var testData = [
                     {
                         pid: "18df08470faf4c7fba11f29dfb87ea18",
@@ -803,4 +822,4 @@ var testData = [
                         in: "",
                         re: 0
                     }
-                ]*/
+                ]

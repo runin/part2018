@@ -143,6 +143,11 @@ var tid = null;//期数uuid
 					hidenewLoading();
 				},
 				success : function(data) {
+					if(data.flow && data.flow == 1){
+                        toUrl('safe.html')
+                        return;
+                    }
+                    
 					if(data.code == 0){
 						me.nowTime = timeTransform(parseInt(data.cud));
 						var nowTime = new Date().getTime();
@@ -213,7 +218,7 @@ var tid = null;//期数uuid
 			var me = H.answer,
 				endTimeStr = pra.qet;
 			me.type = 2;
-			delData('notStarted');
+			delData('notStarted_'+tid);
 			me.countdown_domShow(endTimeStr,"距答题结束还有", pra);
 			
 			if($("body").attr('data-type') === "vote" && !getData('answered_'+tid)){

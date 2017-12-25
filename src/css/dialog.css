@@ -226,7 +226,6 @@ input::-webkit-input-placeholder {
     font-weight: bold;
     color: #DF0C02;
     font-size: 30px;
-    border: 1px solid #DF0200;
 }
 .modal .dialog .dialog-content .btn-lottery-box {
     width: 100%;

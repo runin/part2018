@@ -14,18 +14,20 @@ body[data-type="answer"] .main{
 	}
 	.countdown{
 		color: #F0DD9F;
-		font-size: 16px;
+		font-size: 24px;
 		font-style: normal;
 		text-align: right;
 		margin: 35px 20px;
 			.countdown-tip, .detail-countdown, .detail-countdown label, .detail-countdown i{
 				color:#F0DD9F;
-				font-size: 16px;
+				font-size: 24px;
 				font-style: normal;
 			}
 	}
 	.question {
 		margin: 65px 15px;
+	    overflow-y: scroll;
+    	height: 80vh;
 		ul{
 			h3, span{
 				color: #CAB674;
@@ -33,6 +35,8 @@ body[data-type="answer"] .main{
 				}
 				h3{
 					margin: 66px auto 25px;
+					display: -webkit-box;
+				    font-size: 25px;
 				}
 				span{
 			        display: -webkit-box;
