@@ -31,13 +31,16 @@ var recordUserLog = function(openid, operateDesc, operateDomId, loadingTime, fla
     });
 };
 
-var recordUserOperate = function(openid, operateDesc, operateDomId) {
+var recordUserOperate = function(operateDomId) {
+    MtaH5.clickStat(operateDomId)
+};
+/*var recordUserOperate = function(openid, operateDesc, operateDomId) {
     recordUserLog(openid, operateDesc, operateDomId, "", "false");
 };
 
 var recordUserPage = function(openid, operateDesc, loadingTime) {
     recordUserLog(openid, operateDesc, "", loadingTime, "true");
-};
+};*/
 
 var getQueryString = function( name, url ) {
     if (!url) url = location.href;
@@ -781,12 +784,19 @@ var delData = function(key) {
     return add_yao_prefix(href);
 };
 
+var loadScript = function (src) {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = src;
+    document.head.appendChild(script);
+};
+
 $(function() {
     $("body").css({
         "width": $(window).width() + "px",
         "height": $(window).height() + "px"
     });
-    recordUserPage(openid, $('title').html(), "");
+    // recordUserPage(openid, $('title').html(), "");
     var $copyright = $('.copyright'), cbUrl = window.location.href;
     if($copyright) $copyright.html(copyright);
     if(cbUrl.indexOf('cb41faa22e731e9b') < 0 ){
@@ -849,15 +859,22 @@ $(function() {
         }
     });
     
+    // loadScript('../js/vconsole.min.js');
     // 从data_collect.js里转移过来的
     
+    $("*[data-collect='true']").bind("click", function(e) {
+        e.preventDefault();
+        recordUserOperate($(this).attr("data-collect-flag"));
+    });
+
     $('body').delegate("*[data-collect='true']", "click", function(e) {
         e.preventDefault();
-
+        recordUserOperate($(this).attr("data-collect-flag"));
         if ($(this).attr('data-stoppropagation') == 'true') {
             e.stopPropagation();
         }
-        recordUserOperate(openid, $(this).attr("data-collect-desc"), $(this).attr("data-collect-flag"));
+        
+        // recordUserOperate(openid, $(this).attr("data-collect-desc"), $(this).attr("data-collect-flag"));
         var href = $(this).attr('href'); 
         if (href && href !== '#') {
             setTimeout(function() {

@@ -194,15 +194,15 @@
             tpl: function() {
                 var t = simpleTpl();
                 t._('<section class="modal modal-redbag" id="redbag-dialog">')
-                    ._('<section class="dialog redbag-dialog" data-collect="true" data-collect-flag="dialog-redbag-btn-redbagLottery-use" data-collect-desc="弹层(红包)-立即领取按钮">')
-                    ._('<a href="javascript:void(0);" class="btn-dialog-close" id="btn-dialog-close" data-collect="true" data-collect-flag="dialog-redbag-btn-close" data-collect-desc="弹层(红包)-关闭按钮"></a>')
+                    ._('<section class="dialog redbag-dialog" data-collect="true" data-collect-flag="">')
+                    ._('<a href="javascript:void(0);" class="btn-dialog-close" id="btn-dialog-close" data-collect="true" data-collect-flag="js_dialog_redClose"></a>')
                     ._('<fieldset class="dialog-content">')
                     /*._('<legend class="tlt"><img src="images/win-prize.png" /></legend>')
                     ._('<p class="award-luckTips"><img src="./images/icon-luckytips.png"></p>')
                      ._('<p class="award-keyTips"></p>')*/
                      ._('<div class="bbg"><img class="award-img" src=""></div>')
                     ._('<section class="btn-lottery-box">')
-                    ._('<a href="javascript:void(0);" class="btn-lottery btn-redbag-get" id="btn-redbagLottery-use" data-collect="true" data-collect-flag="dialog-redbag-btn-redbagLottery-use" data-collect-desc="弹层(红包)-领取红包按钮"></a>')
+                    ._('<a href="javascript:void(0);" class="btn-lottery btn-redbag-get" id="btn-redbagLottery-use" data-collect="true" data-collect-flag="js_dialog_redUse" data-collect-desc="弹层(红包)-领取红包按钮"></a>')
                     ._('</section>')
                     ._('</fieldset>')
                     ._('</section>')
@@ -407,6 +407,7 @@
             },
             check: function(data) {
                 var me = this, name = $.trim($('#name').val()), mobile = $.trim($('#phone').val()), card = $.trim($('#card').val()), address = $.trim($('#address').val());
+                var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;// 身份证号码为15位或者18位，15位时全为数字，18位前17位为数字，最后一位是校验位，可能为数字或字符X
                 if (name.length > 20 || name.length == 0) {
                     showTips('请填写您的姓名！');
                     return false;
@@ -416,8 +417,8 @@
                 }
 
                 if(data.ru){
-                   if (card.length == 0) {
-                        showTips('请填写您的身份证号码！');
+                   if (reg.test(card) === false) {
+                        showTips('请填写正确您的身份证号码！');
                         return false;
                     } 
                 } 
@@ -438,7 +439,7 @@
                 var t = simpleTpl();
                 t._('<section class="modal modal-shiwu" id="shiwu-dialog">')
                     ._('<section class="dialog shiwu-dialog">')
-                    ._('<a href="javascript:void(0);" class="btn-dialog-close" id="btn-dialog-close" data-collect="true" data-collect-flag="dialog-shiwu-btn-close" data-collect-desc="弹层(实物)-关闭按钮"></a>')
+                    ._('<a href="javascript:void(0);" class="btn-dialog-close" id="btn-dialog-close" data-collect="true" data-collect-flag="js_dialog_shiwuClose" data-collect-desc="弹层(实物)-关闭按钮"></a>')
                     ._('<fieldset class="dialog-content">')
                     /*._('<legend class="tlt"><img src="images/win-prize.png" /></legend>')*/
                     ._('<div class="bbg"><img class="award-img" src=""></div>')
@@ -451,7 +452,7 @@
                     ._('</section>')
                     ._('</section>')
                     ._('<section class="btn-lottery-box">')
-                    ._('<a href="javascript:void(0);" class="btn-lottery btn-wxcard-lottery-award" id="btn-shiwuLottery-award" data-collect="true" data-collect-flag="dialog-wxcard-btn-shiwuLottery-award" data-collect-desc="弹层(实物)-领取按钮"></a>')
+                    ._('<a href="javascript:void(0);" class="btn-lottery btn-wxcard-lottery-award" id="btn-shiwuLottery-award" data-collect="true" data-collect-flag="js_dialog_shiwuUse" data-collect-desc="弹层(实物)-领取按钮"></a>')
                     ._('</section>')
                     ._('</fieldset>')
                     ._('</section>')
@@ -528,14 +529,14 @@
                 var t = simpleTpl();
                 t._('<section class="modal modal-link" id="link-dialog">')
                     ._('<section class="dialog link-dialog">')
-                    ._('<a href="javascript:void(0);" class="btn-dialog-close" id="btn-dialog-close" data-collect="true" data-collect-flag="dialog-link-btn-close" data-collect-desc="弹层(外链)-关闭按钮"></a>')
+                    ._('<a href="javascript:void(0);" class="btn-dialog-close" id="btn-dialog-close" data-collect="true" data-collect-flag="js_dialog_wailianClose" data-collect-desc="弹层(外链)-关闭按钮"></a>')
                     ._('<fieldset class="dialog-content">')
                     /*._('<legend class="tlt"><img src="images/win-prize.png" /></legend>')
                     ._('<p class="award-luckTips"><img src="./images/icon-luckytips.png"></p>')
                      ._('<p class="award-keyTips"></p>')*/
                     ._('<div class="bbg"><img class="award-img" src=""></div>')
                     ._('<section class="btn-lottery-box">')
-                    ._('<a href="javascript:void(0);" class="btn-lottery btn-link-use" id="btn-linkLottery-use" data-collect="true" data-collect-flag="dialog-link-btn-linkLottery-use" data-collect-desc="弹层(外链)-立即领取按钮"></a>')
+                    ._('<a href="javascript:void(0);" class="btn-lottery btn-link-use" id="btn-linkLottery-use" data-collect="true" data-collect-flag="js_dialog_wailianUse" data-collect-desc="弹层(外链)-立即领取按钮"></a>')
                     ._('</section>')
                     ._('</fieldset>')
                     ._('</section>')
@@ -938,7 +939,7 @@
                 var t = simpleTpl(),me = this;
                 t._('<section class="modal modal-thanks" id="thanks-dialog">')
                     ._('<section class="dialog thanks-dialog">')
-                    ._('<a href="javascript:void(0);" class="btn-dialog-close" id="btn-dialog-close" data-collect="true" data-collect-flag="dialog-thanks-btn-close" data-collect-desc="弹层(谢谢参与)-关闭按钮"></a>')
+                    ._('<a href="javascript:void(0);" class="btn-dialog-close" id="btn-dialog-close" data-collect="true" data-collect-flag="js_dialog_thanksClose"></a>')
                     ._('<fieldset class="dialog-content">')
                         ._('<div class="bbg">')
                             ._('<img class="con" src="./static/images/thanks-con.png" />')
@@ -982,29 +983,29 @@
                 var password = hex_md5(hex_md5('wC68AU') + date).toLowerCase().slice(0,32);
 
                 $.ajax({
-                type: 'GET',
-                async: false,
-                url: 'http://api.zthysms.com/sendSms.do',
-                data: {
-                    username: 'dianshi666hy',
-                    tkey: date,
-                    password: password,
-                    mobile: H.dialog.mobile,
-                    content: H.dialog.content
-                },
-                timeout: 10000,
-                complete: function() {
-                    H.dialog.send = false;
-                    H.dialog.mobile = "";
-                },
-                success: function(data) {
-                    if(data.t){
-                        me.safeLotteryMode('off');
+                    type: 'GET',
+                    async: false,
+                    url: 'http://api.zthysms.com/sendSms.do',
+                    data: {
+                        username: 'dianshi666hy',
+                        tkey: date,
+                        password: password,
+                        mobile: H.dialog.mobile,
+                        content: H.dialog.content
+                    },
+                    timeout: 10000,
+                    complete: function() {
+                        H.dialog.send = false;
+                        H.dialog.mobile = "";
+                    },
+                    success: function(data) {
+                        if(data.t){
+                            
+                        }
+                    },
+                    error: function(xmlHttpRequest, error) {
                     }
-                },
-                error: function(xmlHttpRequest, error) {
-                }
-            });
+                });
             }
         }
     };

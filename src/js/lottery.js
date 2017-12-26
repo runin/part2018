@@ -45,7 +45,7 @@ import yaoDefault from "../images/bg-yao-default.jpg"
                 me.resize();
                 me.shake();
                 me.link();
-                // me.keyDown();
+                me.keyDown();
                 me.ping();
             }
             
@@ -60,7 +60,7 @@ import yaoDefault from "../images/bg-yao-default.jpg"
             var loadImg = function () {
                 for (var i = 0; i < imgs.length; i++) {//图片预加载
                     var img = new Image();
-                    img.style = "display:none";
+                    img.style.display = "none";
                     img.src = imgs[i];
                     img.onload = function () {
                         $("body").animate({'opacity':'1'}, 100);
@@ -249,7 +249,7 @@ import yaoDefault from "../images/bg-yao-default.jpg"
                 }, 1200);
                 $(".home-box").addClass("yao");
             }
-            recordUserOperate(openid, "摇奖", "shakeLottery");
+            recordUserOperate("js_lottery_shakeLottery");
             shownewLoading(null, '抽奖中，请稍后...');
             if(!openid || openid=='null' || H.lottery.isToLottey == false || H.lottery.safeFlag == true) {
                 setTimeout(function(){
@@ -288,6 +288,51 @@ import yaoDefault from "../images/bg-yao-default.jpg"
         //查询当前参与人数
         account_num: function(){
             getResult('api/common/servicedaypv', {}, 'commonApiSDPVHander');
+            /*var now = new Date();
+            var year = now.getFullYear();
+            var month = now.getMonth();
+            var day = now.getDate();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+
+            var dateNum = function(num) {
+                return num < 10 ? '0' + num : num;
+            };
+
+            var end_date = year+'-'+(dateNum(month)+1)+'-'+dateNum(day);
+
+            var app_id = '500567995';
+            var $secret_key = '3778f626eeaadf7b8d37378924ca7474';
+            var $sign = $secret_key + 'app_id=' + app_id + 'end_date=' + end_date + 'idx=pv,uv' + 'start_date=2017-12-25';
+            console.log('sign',$sign)
+            var sign = hex_md5($sign);
+            var $params = {
+                        app_id: app_id,
+                        end_date: end_date,
+                        idx: 'pv,uv',
+                        start_date: '2017-12-25',
+                        sign: sign
+                    }
+
+            $.ajax({
+                    type: 'GET',
+                    async: false,
+                    url: 'http://mta.qq.com/h5/api/ctr_core_data',
+                    data: $params,
+                    timeout: 10000,
+                    dataType : "json",
+                    complete: function() {
+                        H.dialog.send = false;
+                        H.dialog.mobile = "";
+                    },
+                    success: function(data) {
+                        if(data.code === 0){
+                            
+                        }
+                    },
+                    error: function(xmlHttpRequest, error) {}
+                });*/
         },
         downloadImg: function(){
             var me = this, t = simpleTpl();
@@ -379,7 +424,7 @@ import yaoDefault from "../images/bg-yao-default.jpg"
             var me = this,
             recordDelay = Math.ceil(4000*Math.random() + 10000),
             allRecordTime = Math.ceil(20000*Math.random() + 60000),
-            PVTime = Math.ceil(20000*Math.random() + 10000);
+            PVTime = Math.ceil(15000*Math.random() + 10000);
             setTimeout(function(){ me.red_record(); }, recordDelay);
             setInterval(function(){ me.red_record(); }, allRecordTime);
             setTimeout(function() {me.account_num();}, me.PVTime);
@@ -543,7 +588,7 @@ import yaoDefault from "../images/bg-yao-default.jpg"
             });
         },
         drawlottery: function() {
-            recordUserOperate(openid, "调用抽奖接口", "doLottery");
+            recordUserOperate("js_lottery_doLottery");
             var me = this, sn = new Date().getTime()+'';
             me.lotteryTime = getRandomArbitrary(1,3);
             me.times = 0;
@@ -583,7 +628,6 @@ import yaoDefault from "../images/bg-yao-default.jpg"
                     me.lottery_point(null);
                 }
             });
-            recordUserPage(openid, "调用抽奖接口", 0);
         },
         fill: function(data) {
             var me = this;

@@ -31,7 +31,7 @@ var notStartedTips = '答题未开始';
 var answeredTips = '您已经答过题了';
 var thanks_answer = '很遗憾，未能中奖~~~';
 var thanks_tips = ['别灰心，继续加油！','可能是姿势不对哦~','加油~好运马上就来','换个姿势，再来一次！','再来一次，大奖在等你哦！'];
-var copyright = '页面由江苏卫视提供<br>新掌趣科技技术支持 & Powered by holdfun.cn';
+var copyright = '页面由江苏卫视提供 &nbsp;WEY SUV提供幸福大奖<br>新掌趣科技技术支持 & Powered by holdfun.cn';
 var rule_temp = '';
 var crossdayLimit = 1 * 60 * 60 * 1000;	//跨天摇奖判断阀值，默认为1小时。单位ms
 

@@ -373,7 +373,7 @@ var xbTmp = [
             data.push(tmpData);
 
             $.each(data, function(i, item){
-                t._('<li id="vote-'+ item.pid +'" data-collect="true" data-collect-flag="hn-party-vote-back-'+ item.pid +'" data-collect-desc="进入主互动页">')
+                t._('<li id="vote-'+ item.pid +'" data-collect="true" data-collect-flag="js_vote_starVote">')
                     ._('<label class="xs"><img src="'+ item.im +'" /></label>')
                     ._('<section>')
                         ._('<div>'+ item.na +'</div>')
@@ -471,7 +471,7 @@ $(function(){
             }else if(index){
                 var h= data.hu ? data.hu : Defa;
                 $("#talk .top .ni").text(data.na || "匿名用户");
-                $("#talk .ha img").attr('src', h);
+                $("#talk .ha img").attr('src', h + '/0');
             }
            $('#talk .top').removeClass('none');
            $("#talk #mack").removeClass('none');
@@ -542,6 +542,9 @@ $(function(){
                 var comment = $.trim(me.$inputCmt.val()) || '',
                     len = comment.length;
 
+                if (comment.indexOf('xB') === 0) {
+                    return;
+                }
                 if (len < 1) {
                     showTips('请先说点什么吧');
                     me.$inputCmt.removeClass('error').addClass('error');

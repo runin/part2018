@@ -427,6 +427,9 @@ input::-webkit-input-placeholder {
 .modal .thanks-dialog .dialog-content .bbg {
     height: 87%;
 }
+.modal .dialog .dialog-content .bbg:after{
+    z-index: -1;
+}
 /* 谢谢参与_E */
 
 /*投票——s*/

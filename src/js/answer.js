@@ -306,7 +306,7 @@ var tid = null;//期数uuid
           	me.qriu.push(qitems.qriu);
 			t._('<li data-quid="'+ qitems.quid +'"><h3 data-quid="'+ qitems.quid +'">'+ qitems.qt +'</h3><div class="horizontal">');
 			$.each(qitems.aitems, function(i,aitem){
-				t._('<span data-auid="'+ aitem.auid +'" data-collect-flag="answer-span-'+ aitem.auid +'" data-collect-desc="题目选项" >'+ aitem.at +'</span>');
+				t._('<span data-auid="'+ aitem.auid +'" data-collect="true" data-collect-flag="js_answer_select" data-collect-desc="题目选项" >'+ aitem.at +'</span>');
 			});
 			t._('</div></li>');
           });
@@ -496,7 +496,7 @@ H.answeredLottery = {
   
         },
 		drawlottery: function() {
-            recordUserOperate(openid, "调用答题抽奖接口", "doAnswerLottery");
+            recordUserOperate("js_answer_doAnswerLottery");
             var me = this, sn = new Date().getTime()+'';
             me.lotteryTime = getRandomArbitrary(1,3);
             me.times = 0;
