@@ -9,12 +9,13 @@ import '../css/dialog.css';
       me.event();
     },
     event: function () {
-      $("#main").swipeUp(function (e) {
+      $("#main").bind('touchend',function (e) {
         e.preventDefault();
         toUrl('vote.html');
       });
       $("#rule").bind('touchend',function (e) {
         e.preventDefault();
+        e.stopPropagation();
         H.dialog.rule.open();
       })
       
