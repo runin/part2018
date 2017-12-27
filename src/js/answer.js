@@ -539,7 +539,6 @@ H.answeredLottery = {
                     me.fill(null);
                 }
             });
-            recordUserPage(openid, "调用答题抽奖接口", 0);
         },
         fill: function(data) {
             var me = this;
