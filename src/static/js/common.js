@@ -788,7 +788,7 @@ var loadScript = function (src) {
     var script = document.createElement("script");
     script.type = "text/javascript";
     script.src = src;
-    document.head.appendChild(script);
+    document.body.appendChild(script);
 };
 
 $(function() {
@@ -859,7 +859,8 @@ $(function() {
         }
     });
     
-    // loadScript('../js/vconsole.min.js');
+    // loadScript('./static/js/vconsole.min.js');
+    // var vConsole = new VConsole();
     // 从data_collect.js里转移过来的
     
     $("*[data-collect='true']").bind("click", function(e) {

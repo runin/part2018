@@ -316,7 +316,7 @@ import yaoDefault from "../images/bg-yao-default.jpg"
             var idx = 'pv,uv';
             var start_date = '2017-12-26';
             var $sign = $secret_key + 'app_id=' + app_id + 'end_date=' + end_date + 'idx=pv,uv' + 'start_date=' + start_date;
-            console.log('sign',$sign)
+            // console.log('sign',$sign)
             var sign = hex_md5($sign);
             var $params = {
                         app_id: app_id,
