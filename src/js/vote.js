@@ -471,7 +471,7 @@ $(function(){
             }else if(index){
                 var h= data.hu ? data.hu : Defa;
                 $("#talk .top .ni").text(data.na || "匿名用户");
-                $("#talk .ha img").attr('src', h + '/0');
+                $("#talk .ha img").attr('src', h);
             }
            $('#talk .top').removeClass('none');
            $("#talk #mack").removeClass('none');

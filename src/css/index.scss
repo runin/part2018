@@ -30,6 +30,9 @@ body{
         position: relative;
         left: 5px;
         display: inline-block;
+        -webkit-animation: xingdd 1s infinite ease;
+        animation: xingdd 1s infinite ease;
+        animation-direction: alternate-reverse;
       }
       .text{
         display: inline-block;
@@ -88,6 +91,14 @@ body{
       -webkit-animation: start 2s infinite ease-in-out;
       animation: start 2s infinite ease-in-out;
     }
+    .d{
+      width: 250px;
+      height: 76px;
+      -webkit-animation: dd .4s infinite ease-in-out;
+      animation: dd .4s infinite ease-in-out;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both;
+    }
   }
 }
 @-webkit-keyframes rotate {
@@ -96,6 +107,24 @@ body{
   }
   to{
     -webkit-transform: rotate(0deg);
+  }
+ }
+ @-webkit-keyframes dd {
+  from{
+    background: url('../images/d1.png') no-repeat;
+    background-size: 100% auto; 
+  }
+  to{
+    background: url('../images/d2.png') no-repeat;
+    background-size: 100% auto; 
+  }
+ }
+@-webkit-keyframes xingdd {
+  from{
+      -webkit-transform: translate3d(0, 10px, 0);
+  }
+  to{
+    -webkit-transform: translate3d(0, 0px, 0);
   }
  }
 

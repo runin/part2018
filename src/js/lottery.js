@@ -285,10 +285,19 @@ import yaoDefault from "../images/bg-yao-default.jpg"
         red_record: function(){
             getResult('api/lottery/allrecord', {}, 'callbackLotteryAllRecordHandler');
         },
+        addCount: function(count){
+        	$(".count label").html(count);
+			$(".count").removeClass("hidden");
+            setInterval(function(){
+	            var pv = getRandomArbitrary(33,99);
+	            pv = $(".count label").html()*1 + pv;
+	            $(".count label").html(pv);
+	        },3000);
+        },
         //查询当前参与人数
         account_num: function(){
-            getResult('api/common/servicedaypv', {}, 'commonApiSDPVHander');
-            /*var now = new Date();
+            var me = this;
+            var now = new Date();
             var year = now.getFullYear();
             var month = now.getMonth();
             var day = now.getDate();
@@ -304,35 +313,42 @@ import yaoDefault from "../images/bg-yao-default.jpg"
 
             var app_id = '500567995';
             var $secret_key = '3778f626eeaadf7b8d37378924ca7474';
-            var $sign = $secret_key + 'app_id=' + app_id + 'end_date=' + end_date + 'idx=pv,uv' + 'start_date=2017-12-25';
+            var idx = 'pv,uv';
+            var start_date = '2017-12-26';
+            var $sign = $secret_key + 'app_id=' + app_id + 'end_date=' + end_date + 'idx=pv,uv' + 'start_date=' + start_date;
             console.log('sign',$sign)
             var sign = hex_md5($sign);
             var $params = {
                         app_id: app_id,
                         end_date: end_date,
-                        idx: 'pv,uv',
-                        start_date: '2017-12-25',
+                        idx: idx,
+                        start_date: start_date,
                         sign: sign
                     }
-
             $.ajax({
-                    type: 'GET',
-                    async: false,
-                    url: 'http://mta.qq.com/h5/api/ctr_core_data',
-                    data: $params,
-                    timeout: 10000,
-                    dataType : "json",
-                    complete: function() {
-                        H.dialog.send = false;
-                        H.dialog.mobile = "";
-                    },
-                    success: function(data) {
-                        if(data.code === 0){
-                            
-                        }
-                    },
-                    error: function(xmlHttpRequest, error) {}
-                });*/
+                type: 'GET',
+                async: false,
+                url: domain_url + 'api/mta/ctr_core_data' + dev,
+                data: $params,
+                dataType: "jsonp",
+                jsonpCallback: 'callbackMtaCtrCoreDataHandler',
+                timeout: 10000,
+                complete: function() {},
+                success: function(data) {
+                    if(data.code == 0){
+                    var items = data.data,
+                        sum = 0;
+                        for(var x in items){
+                            console.log(items[x].pv);
+                            sum+= items[x].pv*1;
+                       }
+                        me.addCount(sum);
+                	}
+                },
+                error: function(xmlHttpRequest, error) {
+                    me.addCount(10000);
+                }
+            });
         },
         downloadImg: function(){
             var me = this, t = simpleTpl();
@@ -785,19 +801,7 @@ import yaoDefault from "../images/bg-yao-default.jpg"
         }
     };
 
-    W.commonApiSDPVHander = function(data){
-        if(data.code == 0){
-            if (data.c*1 != 0) {
-                $(".count label").html(data.c);
-                $(".count").removeClass("hidden");
-                setInterval(function(){
-                    var pv = getRandomArbitrary(33,99);
-                    pv = $(".count label").html()*1 + pv;
-                    $(".count label").html(pv);
-                },3000);
-            }
-        }
-    };
+    
 
     W.callbackLotteryAllRecordHandler = function(data){
         if(data.result){
