@@ -193,6 +193,7 @@ body {
 .count img{
 	display: inline-block;
 	width: 144px;
+	float: left;
 }
 .count label{
     color: #DFAC40;
@@ -207,6 +208,7 @@ body {
     height: 83px;
     line-height: 83px;
     max-width: 34%;
+    margin-left: 5px;
 }
 .thanks-tips {
     position: relative;

@@ -26,8 +26,9 @@ var mpappid = "wx9097d74006e67df3";
 // var channelUuid = "70534c7fdbb8462491e225c94eba082b";
 
 var wTitle = 'WEY 让幸福照亮你';
-var missTips = '您未成功答对题目，已错过抽奖，请期待下一次大奖~';
-var notStartedTips = '答题未开始';
+var missTips = '未成功答题，错过抽奖';
+var notStartedTips = '答题时间未到，请耐心等待';
+var errorTips = '答案错误，请留意WEY品牌广告片';
 var answeredTips = '您已经答过题了';
 var thanks_answer = '很遗憾，未能中奖~~~';
 var thanks_tips = ['别灰心，继续加油！','可能是姿势不对哦~','加油~好运马上就来','换个姿势，再来一次！','再来一次，大奖在等你哦！'];

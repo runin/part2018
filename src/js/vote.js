@@ -493,7 +493,7 @@ $(function(){
                 var $this = $(this);
                 
                 if ($this.hasClass(me.REQUEST_CLS)) {
-                    // showTips('发送频率过快,稍后再试');
+                    showTips('每人一分钟只能发一次道具哦~');
                     return;
                 }
                 $this.addClass(me.REQUEST_CLS);
@@ -514,7 +514,7 @@ $(function(){
                         hidenewLoading();
                         setTimeout(function(){
                             $this.removeClass(me.REQUEST_CLS);
-                        },1e3);
+                        },60e3);
                     },
                     success : function(data) {
                         if(data.code == 0) {

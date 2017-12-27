@@ -100,7 +100,7 @@ var tid = null;//期数uuid
 						});
 
 					}else{
-						showTips('答案错误，请重新答题！');
+						showTips(errorTips);
 						return false;
 					}
 					

@@ -173,10 +173,6 @@ import yaoDefault from "../images/bg-yao-default.jpg"
                             me.change();
                         }
                     }
-                },
-                error: function(xmlHttpRequest, error) {
-                    toUrl('safe.html');
-                    //me.safeLotteryMode('on');
                 }
             });
         }, 
