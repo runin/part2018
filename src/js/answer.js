@@ -481,8 +481,8 @@ H.answeredLottery = {
 	            	me.$lotteryDialog.addClass('none');
 	            	clearTimeout(me.ansTimer);
 	            	if(me.flag){
-	            		me.drawlottery();
 	            		me.flag = false;
+	            		me.drawlottery();
 	            	}
 	            	
 	            }
