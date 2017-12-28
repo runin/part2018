@@ -235,7 +235,7 @@ import yaoDefault from "../images/bg-yao-default.jpg"
                 });
                 setTimeout(function(){
                     $(".m-t-b").css({
-                        '-webkit-transform': 'translate3d(0,0,0)',
+                        '-webkit-transform': 'translate3d(0,1px,0)',
                         '-webkit-transition': '-webkit-transform .5s ease'
                     });
                     $(".m-f-b").css({
