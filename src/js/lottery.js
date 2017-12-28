@@ -6,7 +6,7 @@ import End from '../images/end.png';
 import lotteryBottom from "../images/bg-lottery-bottom.jpg";
 import wheelBottom from "../images/bg-wheel-bottom.png";
 import wheelTop from "../images/bg-wheel-top.png";
-import yaoDefault from "../images/bg-yao-default.jpg"
+import yaoDefault from "../images/bg-yao-default.jpg";
 
 ;(function($) {
     H.lottery = {
@@ -36,6 +36,8 @@ import yaoDefault from "../images/bg-yao-default.jpg"
         lotteryTime: getRandomArbitrary(1,3),
         $lotteryCountdown: $("#lottery-countdown"),
         luckData: null,
+        shakeMusicA: document.getElementById("audio-a"),
+        shakeMusicB: document.getElementById("audio-b"),
         init: function() {
             var me = this;
             me.lotteryRound_port();
@@ -48,7 +50,11 @@ import yaoDefault from "../images/bg-yao-default.jpg"
                 me.keyDown();
                 me.ping();
             }
-            
+
+            document.addEventListener("WeixinJSBridgeReady", function () {
+              me.shakeMusicA.load();
+              me.shakeMusicB.load();
+            }, false);
         },
         loadImg: function(){
             var imgs = [
@@ -208,6 +214,7 @@ import yaoDefault from "../images/bg-yao-default.jpg"
             hidenewLoading();
         },
         shake_listener: function() {
+            var me = H.lottery;
             if (!H.lottery.safeFlag) {
                 if(H.lottery.isCanShake){
                     H.lottery.isCanShake = false;
@@ -224,7 +231,7 @@ import yaoDefault from "../images/bg-yao-default.jpg"
                 }
             }
             if(!$(".home-box").hasClass("yao")) {
-                $("#audio-a").get(0).play();
+                me.shakeMusicA.play();
                 $(".m-t-b").css({
                     '-webkit-transition': '-webkit-transform .2s ease',
                     '-webkit-transform': 'translate3d(0,-150px,0)'
@@ -646,15 +653,15 @@ import yaoDefault from "../images/bg-yao-default.jpg"
             me.imgMath();
             $(".home-box").removeClass("yao");
             if(data == null || data.result == false){
-                $("#audio-a").get(0).pause();
+                me.shakeMusicA.pause();
                 setTimeout(function(){
                     // H.dialog.thanks.open(data);
                     me.thanks();
                 }, 1500);
                 return;
             }else{
-                $("#audio-a").get(0).pause();
-                $("#audio-b").get(0).play();    //中奖声音
+                me.shakeMusicA.pause();
+                me.shakeMusicB.play();    //中奖声音
             }
             me.showDialog(data);
         },

@@ -373,8 +373,13 @@ H.answeredLottery = {
 	lotteryTime: getRandomArbitrary(1,3),
 	ansTimer: null,
 	flag: true,
+	shakeMusicB: document.getElementById("audio-b"),
 	init: function(){
-		this.dom();
+		var me = this;
+		me.dom();
+		document.addEventListener("WeixinJSBridgeReady", function () {
+          me.shakeMusicB.load();
+        }, false);
 	},
 	dom: function(){
 		var me = H.answeredLottery;
@@ -552,7 +557,7 @@ H.answeredLottery = {
                 }, 1500);
                 return;
             }else{
-                $("#audio-b").get(0).play();    //中奖声音
+                me.shakeMusicB.play();    //中奖声音
             }
             me.showDialog(data);
         },
