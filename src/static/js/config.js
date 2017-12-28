@@ -4,26 +4,26 @@ var domain_url = "https://yaotv.holdfun.cn/portal/";
 // var domain_url = "http://test.holdfun.cn/portal/";
 
 var version = "V1.0";
-var share_img = "http://cdn.holdfun.cn/resources/images/2016/09/08/90d80b9511324d7bad5a1dc2f17be21f.png";
-var share_title = "看江苏卫视，全天大奖摇不停！";
-var share_desc = "收看江苏卫视情感剧场，使用微信摇一摇（电视），多重好礼等你来拿！";
+var share_img = "http://cdn.holdfun.cn/resources/images/2017/12/28/d1ad7a98b2cd41c09147b9a24535c9c4.jpg";
+var share_title = "WEY携手江苏卫视演艺最美跨年夜";
+var share_desc = "中国豪华SUV领导者WEY提供VV7十年使用权、欧洲豪华游等幸福大奖";
 var share_url = window.location.href;
 var follow_shaketv_appid = 'wxca9de9df38b0951e';
 var shaketv_appid  = 'wx801857adaf27891e';
 var yao_tv_id = 51101;
 
 //正式
-var serviceNo = "tv_jiangsu_part";
-var stationUuid = "4160bcaf21e9495f9cf17fe9689f5bbb";
-var channelUuid = "c6ca92df04f2498a929806b22cb866ef";
-var mpappid = "wx9097d74006e67df3";
+// var serviceNo = "tv_jiangsu_part";
+// var stationUuid = "4160bcaf21e9495f9cf17fe9689f5bbb";
+// var channelUuid = "c6ca92df04f2498a929806b22cb866ef";
+// var mpappid = "wx9097d74006e67df3";
 
 
 //测试
-// var serviceNo = "tv_hebeitv_three";
-// var mpappid = "wxc5d930ea846a40e1";
-// var stationUuid = "fedc792bb5324726a2e4d43ccaa6694d";
-// var channelUuid = "70534c7fdbb8462491e225c94eba082b";
+var serviceNo = "tv_hebeitv_three";
+var mpappid = "wxc5d930ea846a40e1";
+var stationUuid = "fedc792bb5324726a2e4d43ccaa6694d";
+var channelUuid = "70534c7fdbb8462491e225c94eba082b";
 
 var wTitle = 'WEY 让幸福照亮你';
 var missTips = '未成功答题，错过抽奖';
