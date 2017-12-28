@@ -36,8 +36,8 @@ import yaoDefault from "../images/bg-yao-default.jpg";
         lotteryTime: getRandomArbitrary(1,3),
         $lotteryCountdown: $("#lottery-countdown"),
         luckData: null,
-        shakeMusicA: document.getElementById("audio-a"),
-        shakeMusicB: document.getElementById("audio-b"),
+        shakeMusicA: document.getElementById("shakeMusicA"),
+        shakeMusicB: document.getElementById("shakeMusicB"),
         init: function() {
             var me = this;
             me.lotteryRound_port();
@@ -49,12 +49,13 @@ import yaoDefault from "../images/bg-yao-default.jpg";
                 me.link();
                 me.keyDown();
                 me.ping();
+                document.addEventListener("WeixinJSBridgeReady", function () {
+                  me.shakeMusicA.load();
+                  me.shakeMusicB.load();
+                }, false);
             }
 
-            document.addEventListener("WeixinJSBridgeReady", function () {
-              me.shakeMusicA.load();
-              me.shakeMusicB.load();
-            }, false);
+            
         },
         loadImg: function(){
             var imgs = [

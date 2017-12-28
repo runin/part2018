@@ -9,9 +9,9 @@
         $container: $('body'),
         init: function() {
             var me = this, width = $(window).width(), height = $(window).height();
-            $('body').css({
+            /*$('body').css({
                 'width': width
-            });
+            });*/
         },
         open: function(data) {
             var me = this;
