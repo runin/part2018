@@ -284,6 +284,10 @@ var xbTmp = [
                 if(talkFlag){
                     talkFlag = false;
                     H.talk.init();
+                }else{
+                    H.comment.roomTimer = setInterval(function(){
+                    H.comment.getComments();
+                },10000);
                 }
                 
             });
@@ -293,6 +297,7 @@ var xbTmp = [
                 $("#talk").addClass('none');
                 $(this).addClass('none');
                 $("#cm").removeClass('none');
+                clearInterval(H.comment.roomTimer);
             });
 
             $('#answerbtn').bind('touchend', function(e){
@@ -612,7 +617,7 @@ $(function(){
     
     H.comment = {
         tmpDataTimer: 300e3,
-        timer: 5000,
+        roomTimer: null,
         xbTimer: null,
         maxid: 0,
         pageSize: 50,
@@ -625,15 +630,15 @@ $(function(){
         init: function() {
             var me = this;
             me.getComments();
-            setInterval(function(){
+            me.roomTimer = setInterval(function(){
                 me.getComments();
             },10000);
             setTimeout(function () {
                 me.showComments();
             },1000);
-            setTimeout(function () {
+            /*setTimeout(function () {
                 me.getZDComments();
-            },8000);
+            },8000);*/
         },
         tmpData: function(){
             var me = this;
@@ -662,7 +667,7 @@ $(function(){
                 async : false,
                 url : domain_url + 'api/comments/room' + dev,
                 data: {
-                    ps: 50,
+                    ps: me.pageSize,
                     maxid: me.maxid
                 },
                 dataType : "jsonp",

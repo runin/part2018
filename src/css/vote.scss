@@ -33,6 +33,7 @@ body[data-type="vote"] .main{
 	    overflow-y: scroll;
 	    height: 90vh;
 	    margin: 120px 40px;
+		-webkit-overflow-scrolling: touch; /* ios5+ */
     	ul{
 		    position: relative;
 		    width: 100%;
@@ -576,19 +577,19 @@ body[data-type="vote"] .talk{
 		border-radius: 10px;
 		word-break: break-all;
 		padding: 0 15px;
-		background: #cdc3b4;
+		background: #847866;
 	}
 	.comments ul li:nth-child(1){
-	    opacity: .2;
+	    opacity: 1;
 	}
 	.comments ul li:nth-child(2){
-	    opacity: .4;
+	    opacity: 1;
 	}
 	.comments ul li:nth-child(3){
-	    opacity: .6;
+	    opacity: 1;
 	}
 	.comments ul li:nth-child(4){
-	    opacity: .8;
+	    opacity: 1;
 	}
 	.comments ul li:nth-child(5){
 	    opacity: 1;
