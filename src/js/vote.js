@@ -252,10 +252,10 @@ var xbTmp = [
                     if(data.code == 0){
                         me.guid = data.items[0].guid;
                         me.inforoudData = data.items[0].pitems;
-                        me.spellDom(me.inforoudData);
+                        // me.spellDom(me.inforoudData);
 
 
-                        // me.spellDom(testData);
+                        me.spellDom(testData);
                         me.voteSupport();
                     }
                 },
@@ -1039,6 +1039,16 @@ var testData = [
                     {
                         pid: "fcc219d0b9464abdb07b465250759132",
                         na: "周杰伦名称28",
+                        ni: "明星二昵称",
+                        im: "http://yaotv-test.oss-cn-shenzhen.aliyuncs.com/zhima/images/2016623/34fbd924f0d44009b2f402885bba82d8.png",
+                        im2: "",
+                        im3: "",
+                        in: "",
+                        re: 0
+                    },
+                    {
+                        pid: "fcc219d0b9464abdb07b465250759132",
+                        na: "周杰伦名称29",
                         ni: "明星二昵称",
                         im: "http://yaotv-test.oss-cn-shenzhen.aliyuncs.com/zhima/images/2016623/34fbd924f0d44009b2f402885bba82d8.png",
                         im2: "",
