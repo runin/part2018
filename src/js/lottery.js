@@ -287,7 +287,7 @@ import yaoDefault from "../images/bg-yao-default.jpg";
             }
         },
         red_record: function(){
-            getResult('api/lottery/allrecord', {}, 'callbackLotteryAllRecordHandler');
+            getResult('api/lottery/allrecord', {ol: 1}, 'callbackLotteryAllRecordHandler');
         },
         addCount: function(count){
         	$(".count label").html(count);
