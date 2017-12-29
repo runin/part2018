@@ -13,17 +13,17 @@ var shaketv_appid  = 'wx801857adaf27891e';
 var yao_tv_id = 51101;
 
 //正式
-// var serviceNo = "tv_jiangsu_part";
-// var stationUuid = "4160bcaf21e9495f9cf17fe9689f5bbb";
-// var channelUuid = "c6ca92df04f2498a929806b22cb866ef";
-// var mpappid = "wx9097d74006e67df3";
+var serviceNo = "tv_jiangsu_part";
+var stationUuid = "4160bcaf21e9495f9cf17fe9689f5bbb";
+var channelUuid = "c6ca92df04f2498a929806b22cb866ef";
+var mpappid = "wx9097d74006e67df3";
 
 
 //测试
-var serviceNo = "tv_hebeitv_three";
-var mpappid = "wxc5d930ea846a40e1";
-var stationUuid = "fedc792bb5324726a2e4d43ccaa6694d";
-var channelUuid = "70534c7fdbb8462491e225c94eba082b";
+// var serviceNo = "tv_hebeitv_three";
+// var mpappid = "wxc5d930ea846a40e1";
+// var stationUuid = "fedc792bb5324726a2e4d43ccaa6694d";
+// var channelUuid = "70534c7fdbb8462491e225c94eba082b";
 
 var wTitle = 'WEY 让幸福照亮你';
 var missTips = '未成功答题，错过抽奖';
